@@ -1,0 +1,95 @@
+.Fonttin {
+    line-height: 1.5 !important;
+}
+@media (max-width:520px) {
+    .Fonttin {
+        margin-top: 100px !important;
+    }
+    
+}
+
+.Justing {
+    padding: 50px 0px;
+}
+
+.Ju {
+    padding: 0px 0px 50px 0;
+}
+.J{
+    margin-top: 70px;
+    padding: 10px 0px 10px 0;
+}
+
+.Justi {
+    padding: 50px 0px 30px 0 !important;
+}
+
+.Justtttt {
+    padding: 80px 0px 30px 0 !important;
+}
+
+.Justig {
+    padding: 0px 0px 80px 0;
+}
+
+.Imagine {
+    padding: 50px 0px 50px 0 !important;
+}
+
+.Jusyyy {
+    width: 84% !important;
+    margin-top: -50px;
+}
+
+.Justtt {
+    width: 80% !important;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .Amenn {
+        display: none !important;
+    }
+
+}
+
+.breadcrumb {
+    padding: 120px 0px 80px 0px !important;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    background-image: url(https://res.cloudinary.com/greenmouse-tech/image/upload/v1738004599/image_p6abio.jpg);
+}
+
+.Abinahh:nth-child(1) {
+    border: 1px solid transparent;
+    border-image-source: linear-gradient(180deg, #ff6f2270 0%, #E4E4E4 100%);
+    border-image-slice: 1;
+}
+.Abinahh:nth-child(2) {
+    border: 1px solid transparent;
+    border-image-source: linear-gradient(20deg, #0000005a 0%, #E4E4E4 100%);
+    border-image-slice: 1;    
+}
+.Abinahh:nth-child(3) {
+    border: 1px solid transparent;
+    border-image-source: linear-gradient(180deg, #ff6f2270 0%, #E4E4E4 100%);
+    border-image-slice: 1;
+}
+.Abinahh:nth-child(4) {
+    border: 1px solid transparent;
+    border-image-source: linear-gradient(20deg, #0000005a 0%, #E4E4E4 100%);
+    border-image-slice: 1;    
+}
+
+.Juppp{
+    padding: 80px 0px 30px 0;
+}
+
+.custom-zindex {
+    z-index: 9999 !important;
+  }
+  

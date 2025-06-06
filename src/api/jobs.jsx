@@ -1,0 +1,124 @@
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
+import { toast } from "react-toastify";
+
+export function useGetAdminJobs() {
+  return useQuery({
+    queryKey: ["admin-jobs"],
+    queryFn: async () => {
+      const response = await axios.get(`/admin/jobs`);
+      return response.data.data;
+    },
+  });
+}
+
+export function useGetAdminJobById(id) {
+  return useQuery({
+    queryKey: ["admin-job", id],
+    queryFn: async () => {
+      const response = await axios.get(`/admin/job?jobId=${id}`);
+      return response.data.data;
+    },
+  });
+}
+
+export function useCreateJob() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (data) => {
+      const response = await axios.post(`/admin/job/post`, data);
+      return response.data.data;
+    },
+    onSuccess: (res) => {
+      console.log(res);
+      toast.success("Job created successfully");
+      queryClient.invalidateQueries({ queryKey: ["admin-jobs"] });
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+}
+
+export function useUpdateJob() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (data) => {
+      const response = await axios.put(`/admin/job/update`, data);
+      return response.data.data;
+    },
+    onSuccess: (res) => {
+      toast.success("Job updated successfully");
+      const id = res.id;
+      queryClient.invalidateQueries({
+        queryKey: ["admin-jobs", "admin-job", id],
+      });
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+}
+
+export function useDeactivateJob(id) {
+    const queryClient = useQueryClient();
+  
+    return useMutation({
+      mutationFn: async (data) => {
+        const response = await axios.patch(`/admin/job/close?jobId=${id}`, data);
+        return response.data.data;
+      },
+      onSuccess: (res) => {
+        toast.success("Job updated successfully");
+        const id = res.id;
+        queryClient.invalidateQueries({
+          queryKey: ["admin-jobs", "admin-job", id],
+        });
+      },
+      onError: (error) => {
+        toast.error(error.message);
+      },
+    });
+  }
+
+
+export function useGetJobClient() {
+  return useQuery({
+    queryKey: ["client-jobs"],
+    queryFn: async () => {
+      const response = await axios.get(`/fetch/jobs`);
+      return response.data.data;
+    },
+  });
+}
+
+export function useViewJobClient(jobId) {
+  return useQuery({
+    queryKey: ["client-job", jobId],
+    queryFn: async () => {
+      const response = await axios.get(`/view/job?jobId=${jobId}`);
+      return response.data.data;
+    },
+  });
+}
+
+export function useApplyJob() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (data) => {
+      const response = await axios.post(`/apply/job`, data);
+      return response.data.data;
+    },
+    onSuccess: (res) => {
+      console.log(res);
+      toast.success("Application sent successfully");
+      queryClient.invalidateQueries({ queryKey: ["client-jobs"] });
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+}

@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+.btn {
+  @apply p-2 border rounded-md bg-gray-100 hover:bg-gray-300 flex items-center justify-center;
+}
+
+body {
+  color: #0a0a0a;
+  background: rgba(241, 241, 242, 1);
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 14px;
+}
+
+input[type="radio"]:checked + .radio-indicator > div {
+  background-color: rgba(255, 111, 34, 1);
+}
+
+input {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.kuduImage {
+  mix-blend-mode: multiply;
+}
+
+.font-sans {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+a {
+  outline: none !important;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (min-width: 1280px) {
+  .clip-diagonal {
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.DraftEditor-root, .DraftEditor-editorContainer > div {
+  min-height: 20vh;
+}
+
+/* Chrome, Safari, Edge - Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  /* Track color */
+  border-radius: 10px;
+  /* Rounded track edges */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  /* Rounded thumb */
+  border: 3px solid transparent;
+  /* Padding around the thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Change thumb color on hover */
+}
+
+.pending {
+  background-color: rgba(187, 193, 5, 0.2);
+  color: rgba(187, 193, 5, 1);
+}
+
+.active,
+.open {
+  background-color: rgba(5, 193, 104, 0.2);
+  color: rgba(20, 202, 116, 1);
+}
+
+.carouix span.block {
+  display: none !important;
+}
+
+
+.table-x tr:last-child th:first-child {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  /* Optional: Bottom-left corner for specific use cases */
+}
+
+.table-x tr:first-child th:last-child {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  /* Optional: Bottom-right corner */
+}
+
+.table-x tr {
+  border-radius: 10px;
+}
+
+@media (max-width:548px) {
+  .Abi {
+    display: none;
+  }
+
+  .Abinah {
+    display: none;
+  }
+
+  .okayb {
+    height: auto !important;
+  }
+
+}
+@media (max-width: 1023px) {
+  .Desk{
+    display: none !important;
+  }
+  .view{
+    display: none !important;
+  }
+  .All{
+    padding: 0px 30px !important;
+  }
+  
+}
+
+.react-tel-input .country-list .country.highlight {
+  background-color: #f97316 !important; /* Orange background */
+  color: white !important; /* White text */
+}
+
+
+
+.Box {
+  box-shadow: 0px 4px 28px 0px #0000000D !important;
+  padding: 45px 25px !important;
+  border-radius: 50px !important;
+}
+
+.rdw-option-active {
+  background-color: rgba(255, 111, 34, 1) !important;
+  color: white !important;
+}
